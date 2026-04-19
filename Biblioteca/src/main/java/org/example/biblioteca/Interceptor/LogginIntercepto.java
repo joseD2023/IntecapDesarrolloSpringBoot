@@ -14,7 +14,7 @@ public class LogginIntercepto implements HandlerInterceptor {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         LocalTime actual = LocalTime.now();
         LocalTime apertura = LocalTime.of(8,0);
-        LocalTime cierre = LocalTime.of(23, 0);
+        LocalTime cierre = LocalTime.of(17, 0);
 
         if(actual.isBefore(apertura) || actual.isAfter(cierre)){
             response.setStatus(HttpServletResponse.SC_FORBIDDEN); //403
